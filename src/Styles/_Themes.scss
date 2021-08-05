@@ -1,0 +1,95 @@
+$light-bg: antiquewhite;
+$dark-bg: #232533;
+$light-text: #5d4c80;
+$dark-text: #232533;
+
+.light{
+    background-color: $light-bg;
+    color: $dark-text;
+    transition: background-color 0.5s ease;
+
+    p, h1, h2, h3, h4, h5, h6 {
+        color: $light-text;
+    }
+
+    .song-details{
+        p, h1, h2, h3, h4, h5, h6 {
+            color: $dark-text;
+            text-shadow: none !important;
+        }
+    }
+}
+
+.dark{
+    background-color: $dark-bg;
+    color: $light-text;
+
+    p, h1, h2, h3, h4, h5, h6 {
+        color: $light-text;
+    }
+
+    .song-details{
+        color: whitesmoke;
+    }
+
+    transition: background-color 0.5s ease;
+}
+
+.theme-buttons{
+    position: absolute;
+    bottom: 5vh;
+    left: 5vw;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5d4c80;
+    border-radius: 30px;
+    padding: 0 5px;
+
+    h4 {
+        font-size: 1.5rem;
+        cursor: pointer;
+        align-self: center;
+        margin: 0;
+        color: whitesmoke;
+        padding: 12px;
+    }
+
+    button {
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        outline: none;
+        // border: 1px solid #5d4c80;
+        border: none;
+        border-radius: 50%;
+        padding: 12px;
+        transform: scale(1.4);
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .theme-buttons{
+        top: 10vh;
+        left: 6vw;
+        height: 30px;
+        padding: 0;
+
+        h4 {
+            font-size: 1rem;
+        }
+
+        button {
+            width: 25px;
+            height: 25px;
+            padding: 6px;
+        }
+    }
+}
