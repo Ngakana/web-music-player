@@ -36,41 +36,41 @@ $dark-text: #232533;
 }
 
 .theme-buttons{
-    position: absolute;
-    bottom: 5vh;
-    left: 5vw;
-    height: 40px;
+    // position: absolute;
+    // top: 5vh;
+    // left: 5vw;
+    height: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     background-color: #5d4c80;
-    border-radius: 30px;
+    border-radius: 15px;
     padding: 0 5px;
 
     h4 {
-        font-size: 1.5rem;
         cursor: pointer;
         align-self: center;
         margin: 0;
         color: whitesmoke;
-        padding: 12px;
+        margin: 0 .3rem;
     }
 
     button {
         cursor: pointer;
-        width: 40px;
-        height: 40px;
+        width: 22px;
+        height: 15px;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         outline: none;
         // border: 1px solid #5d4c80;
         border: none;
         border-radius: 50%;
-        padding: 12px;
-        transform: scale(1.4);
+        // padding: 12px;
+        // margin-left: 5px;
+        // transform: scale(1.4);
     }
 
 }

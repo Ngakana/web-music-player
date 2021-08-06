@@ -19,7 +19,6 @@
 }
 
 .time-control {
-  min-height: 5vh;
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -37,7 +36,7 @@
 }
 
 .time-control p {
-  padding: 0.2rem;
+  padding: 0.2rem 0.5rem;
 }
 
 .play-controls {
@@ -77,44 +76,35 @@ input[type="range"]::-webkit-slider-thumb {
 
 input[type="range"]::-moz-range-thumb {
   -webkit-appearance: none;
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
   border-radius: 50%;
   outline: none;
   border: none;
   background: #d5c0ff;
-  z-index: 300;
+  z-index: 5000;
 }
 
 .track {
   width: 90%;
-  height: 0.1rem;
   position: relative;
-  overflow-x: hidden;
   overflow-y: visible;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .track input {
   width: 100%;
+  height: 5px;
   -webkit-appearance: none;
   cursor: pointer;
 }
 
 .animate-track {
-  width: 100%;
+  background-color: #d5c0ff !important;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   pointer-events: none;
-}
-
-.animate-track::after {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #d31212;
 }
 
 @media screen and (max-width: 600px) {
@@ -197,8 +187,8 @@ input[type="range"]::-moz-range-thumb {
   top: 0;
   right: 0;
   height: 100vh;
-  min-width: 300px;
-  width: 20vw;
+  min-width: 250px;
+  width: 10vw;
   -webkit-box-shadow: 2px 2px 15px #333;
           box-shadow: 2px 2px 15px #333;
   overflow: scroll;
@@ -224,8 +214,9 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .library-song-card img {
-  height: 100%;
+  height: 60%;
   width: 100%;
+  border-radius: 10%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -462,10 +453,7 @@ nav h1 {
 }
 
 .theme-buttons {
-  position: absolute;
-  bottom: 5vh;
-  left: 5vw;
-  height: 40px;
+  height: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -480,25 +468,24 @@ nav h1 {
       -ms-flex-align: center;
           align-items: center;
   background-color: #5d4c80;
-  border-radius: 30px;
+  border-radius: 15px;
   padding: 0 5px;
 }
 
 .theme-buttons h4 {
-  font-size: 1.5rem;
   cursor: pointer;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   margin: 0;
   color: whitesmoke;
-  padding: 12px;
+  margin: 0 .3rem;
 }
 
 .theme-buttons button {
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 22px;
+  height: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -506,18 +493,14 @@ nav h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   outline: none;
   border: none;
   border-radius: 50%;
-  padding: 12px;
-  -webkit-transform: scale(1.4);
-          transform: scale(1.4);
 }
 
 @media screen and (max-width: 600px) {
@@ -586,6 +569,6 @@ h4 {
 }
 
 .library-active {
-  margin-right: 20vw;
+  margin-right: 10vw;
 }
 /*# sourceMappingURL=app.css.map */
