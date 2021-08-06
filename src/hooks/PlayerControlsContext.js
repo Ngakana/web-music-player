@@ -141,12 +141,12 @@ export function PlayerControlsProvider(props){
         const currentLength = event.target.currentTime;
         const currentProgress = (Math.round(duration)/Math.round(currentLength))*100;
 
-        setPlayingSong({
+        setPlayingSong( (playingSong) => ({
             ...playingSong, 
             length: duration,
             playedLength: currentLength,
             playedLengthPercentage: currentProgress
-        })
+        }))
     }
 
     const songEndHandler = async () => {

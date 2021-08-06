@@ -19,7 +19,7 @@ export function SongLibraryProvider(props){
             }
         });
 
-        setSongs(updatedSongsActiveStatus);
+        setSongs( () => updatedSongsActiveStatus);
     }
 
     return(
