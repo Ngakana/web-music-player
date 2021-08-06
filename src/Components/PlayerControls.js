@@ -3,7 +3,7 @@ import {useContext} from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStepBackward, faStepForward, faPlay, faPause, faSyncAlt, faRandom } from "@fortawesome/free-solid-svg-icons";
-import random from "icons/random.svg"
+// import random from "icons/random.svg"
 
 
 import {AudioContext} from "../hooks/AudioContext";
