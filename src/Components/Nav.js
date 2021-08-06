@@ -13,7 +13,7 @@ const Nav = () => {
 
     return(
         <nav>
-            <div>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }} >
                 <h1>MzansiWaya</h1>
                 <ThemeButton />
             </div>
