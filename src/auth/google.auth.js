@@ -1,8 +1,8 @@
-import firebase from "./firebase.auth";
+import firebaseApp from "./firebase.auth";
 
 const googleLogin = async () => {
 
-    const auth = firebase.auth();
+    const auth = firebaseApp.auth();
     const googleAuth = new auth.googleAuthProvider();
 
     try {
