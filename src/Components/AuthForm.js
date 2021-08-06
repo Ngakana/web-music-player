@@ -26,10 +26,6 @@ function AuthForm({title, form, handleChange, handleSubmit, googleLogin, error, 
         <>
         <form className="auth-form" onSubmit={ handleSubmit } >
             <h1>{title}</h1>
-            <div style={{ display: "flex", alignItems:"center", cursor:"pointer" }} onClick={ handleGoogleLogin } >
-                <GoogleIcon />
-                <h3>Sign in with Google</h3>
-            </div>
             <div className="field">
                 <label htmlFor="email" ><span>Email</span></label>
                 <input onChange={ handleChange } type="email" name="email" value={ form.email || "" } required />
@@ -50,6 +46,10 @@ function AuthForm({title, form, handleChange, handleSubmit, googleLogin, error, 
                 :
                 null
             }
+            <div style={{ display: "flex", alignItems:"center", cursor:"pointer" }} onClick={ handleGoogleLogin } >
+                <GoogleIcon />
+                <h3>Sign in with Google</h3>
+            </div>
         </form>
         </>
     );
