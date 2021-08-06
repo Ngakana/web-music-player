@@ -3,6 +3,7 @@ import {useContext} from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStepBackward, faStepForward, faPlay, faPause, faSyncAlt, faRandom } from "@fortawesome/free-solid-svg-icons";
+import random from "icons/random.svg"
 
 
 import {AudioContext} from "../hooks/AudioContext";
@@ -10,8 +11,6 @@ import {SongContext} from "../hooks/SongsContext";
 import {PlayerSettingsContext} from "../hooks/PlayerSettingsContext";
 import {PlayerControlsContext} from "../hooks/PlayerControlsContext";
 import {ThemeContext} from "../hooks/ThemeContext";
-
-// import audio from "../store/Ulazi feat Zuma Mpura.mp3";
 
 const PlayerControls = () => {
 
@@ -22,13 +21,22 @@ const PlayerControls = () => {
   const {isThemeLight} = useContext(ThemeContext);
 
   const formatTimeInfo = (time) => {
-    return (
-      Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
-    );
+
+    if (time < 3600){
+      return Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2);
+    }
+    else {
+      return Math.floor(time / 3600) + ":" + ("0" + Math.floor(time%3600 /60)).slice(-2) + ":" + ("0" + Math.floor(time%(3600*60)%60)).slice(-2);
+    }
   }
+  
 
   const trackAnim = {
-    transform: `translateX(${playingSong.playedLengthPercentage}%)`,
+    width: `${((playingSong.playedLength)*100)/playingSong.length}%`,
+    position: "absolute",
+    top:"0",
+    left:"0",
+
   };
 
   return (
@@ -55,6 +63,12 @@ const PlayerControls = () => {
         </p>
       </div>
       <div className="play-controls">
+          {/* <RandomizeIcon 
+            onClick={toggleSongShuffle}
+            className="repeat"
+            color={playerSettings.shuffleIsOn ? "#5d4c80" : "#aaa"}
+            style={{ transform: "scale(0.05)" }}
+          /> */}
           <FontAwesomeIcon
             onClick={toggleSongShuffle}
             className="repeat"
@@ -97,7 +111,7 @@ const PlayerControls = () => {
       </div>
       
       <audio
-        onTimeUpdate={songTimeUpdatehandler}
+        onTimeUpdate={songTimeUpdatehandler} 
         onLoadedMetadata={songTimeUpdatehandler}
         ref={audioRef}
         src={playingSong.info.audio}
